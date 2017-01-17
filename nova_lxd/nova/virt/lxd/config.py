@@ -145,6 +145,7 @@ class LXDContainerConfig(object):
             # Configure the console for the instance
             config['raw.lxc'] = 'lxc.console.logfile=%s\n' \
                 % self.container_dir.get_console_path(instance_name)
+            config['raw.lxc'] = 'lxc.aa_allow_incomplete=1'
 
             return config
         except Exception as ex:
