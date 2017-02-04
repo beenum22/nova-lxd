@@ -1135,7 +1135,7 @@ class LXDDriver(driver.ComputeDriver):
         vcpus = instance.flavor.vcpus
         if vcpus >= 0:
             config['limits.cpu'] = str(vcpus)
-        config['raw.lxc'] = 'lxc profile set default raw.lxc lxc.aa_allow_incomplete=1'
+        config['raw.lxc'] = 'lxc.aa_allow_incomplete=1'
         config['raw.lxc'] = 'lxc.console.logfile={}\n'.format(
             instance_attributes.console_path)
 
